@@ -43,5 +43,5 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{secrets.GITHUB_TOKEN}}
         registry: docker.pkg.github.com
-        repository: ${{ github.repository }}
+        repository: ${{ github.repository }}/gocolor
         tag_with_ref: true
