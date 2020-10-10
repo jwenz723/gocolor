@@ -11,8 +11,8 @@ import (
 type Config struct {
 	Account string
 	Address string
-	Color string
-	Region string
+	Color   string
+	Region  string
 }
 
 func getConfig() Config {
