@@ -34,15 +34,12 @@ jobs:
     - name: Test
       run: go test -v .
 
-    - name: Login to GitHub Packages Docker Registry
-      uses: docker/login-action@v1
-      with:
-        registry: docker.pkg.github.com
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Docker Build and Push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1.1.1
       with:
-        push: true
-        tags: ${{ github.repository }}/gocolor:latest
+        username: ${{ github.repository_owner }}
+        password: ${{secrets.GITHUB_TOKEN}}
+        registry: docker.pkg.github.com
+        repository: ${{ github.repository }}/gocolor
+        tag_with_ref: true
+        tag_with_sha: true
