@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"html/template"
 	"log"
@@ -10,30 +11,30 @@ import (
 
 type Config struct {
 	Account string
-	Address string
 	Color   string
 	Region  string
 }
 
 func getConfig() Config {
 	account := getEnvOrDefault("GOCOLOR_ACCOUNT", "unknown")
-	address := getEnvOrDefault("GOCOLOR_ADDRESS", ":8080")
 	color := getEnvOrDefault("GOCOLOR_COLOR", "aquamarine")
 	region := getEnvOrDefault("GOCOLOR_REGION", "unknown")
 	return Config{
 		Account: account,
-		Address: address,
 		Color:   color,
 		Region:  region,
 	}
 }
 
 func main() {
+	addr := flag.String("addr", ":8080", "the address to run the http server on")
+	flag.Parse()
+
 	config := getConfig()
 
 	http.Handle("/", handle(config))
-	fmt.Printf("starting http on %s\n", config.Address)
-	log.Fatal(http.ListenAndServe(config.Address, nil))
+	fmt.Printf("starting http on %s\n", *addr)
+	log.Fatal(http.ListenAndServe(*addr, nil))
 }
 
 func handle(c Config) http.HandlerFunc {
