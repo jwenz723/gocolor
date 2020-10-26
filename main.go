@@ -20,6 +20,7 @@ type Config struct {
 	Region                string
 }
 
+// getConfig will instantiate a Config instance from environment variables
 func getConfig() Config {
 	account := getEnvOrDefault("GOCOLOR_ACCOUNT", "unknown")
 	color := getEnvOrDefault("GOCOLOR_COLOR", "aquamarine")
