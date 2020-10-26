@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gocolor
+  labels:
+    app: gocolor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gocolor
+  template:
+    metadata:
+      labels:
+        app: gocolor
+    spec:
+      containers:
+      - name: gocolor
+        image: docker.pkg.github.com/jwenz723/gocolor/gocolor:sha-dda5355
+        args:
+        - "-addr=:8080"
+        ports:
+        - name: http-service
+          containerPort: 8080
