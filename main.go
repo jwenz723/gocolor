@@ -13,6 +13,7 @@ import (
 	"time"
 )
 
+// Config collects all configuration for gocolor
 type Config struct {
 	Account               string
 	Color                 string
