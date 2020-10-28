@@ -5,7 +5,7 @@ function (
   name="gocolor"
 )
 {
-  local k = (import "1.18/main.libsonnet"),
+  local k = (import "vendor/1.18/main.libsonnet"),
   gocolor: {
       deployment: k.apps.v1.deployment.new(
         name=name,
