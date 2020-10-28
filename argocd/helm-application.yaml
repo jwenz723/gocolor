@@ -1,8 +1,8 @@
-# This will load the contents of k8s/jsonnet/main into argo as an application
+# This will load the contents of k8s/helm into argo as an application
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gocolor-jsonnet
+  name: gocolor-helm
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -14,14 +14,7 @@ spec:
   source:
     repoURL: https://github.com/jwenz723/gocolor.git
     targetRevision: HEAD
-    path: k8s/jsonnet/main
-    directory:
-      jsonnet:
-        libs:
-          - k8s/jsonnet/vendor
-        tlas:
-          - name: name
-            value: "gocolor-jsonnet"
+    path: k8s/helm
   destination:
     server: https://kubernetes.default.svc
     namespace: default

@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: gocolor-native
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   syncPolicy:
