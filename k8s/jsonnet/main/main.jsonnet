@@ -15,17 +15,23 @@ function (
     ],
     replicas=1,
   ) + k.apps.v1.deployment.metadata.withLabels({
-    name: name,
+    "app.kubernetes.io/name": name,
+  }) + k.apps.v1.deployment.spec.selector.withMatchLabels({
+    "app.kubernetes.io/name": name,
+  }) + k.apps.v1.deployment.spec.template.metadata.withLabels({
+    "app.kubernetes.io/name": name,
   }),
   k.core.v1.service.new(
     name=name,
     selector={
-      name: name,
+      "app.kubernetes.io/name": name,
     },
     ports=[k.core.v1.servicePort.newNamed(
       name=portName,
       port=port,
       targetPort=portName,
     )]
-  )
+  ) + k.core.v1.service.metadata.withLabels({
+    "app.kubernetes.io/name": name,
+  })
 ]
