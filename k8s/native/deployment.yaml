@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gocolor
   labels:
-    app: gocolor
+    name: gocolor
+  name: gocolor
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gocolor
+      name: gocolor
   template:
     metadata:
       labels:
-        app: gocolor
+        name: gocolor
     spec:
       containers:
       - name: gocolor
