@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gocolor
-        image: docker.pkg.github.com/jwenz723/gocolor/gocolor:sha-dda5355
+        image: jwenz723/gocolor:sha-cac4dd6
         args:
         - "-addr=:8080"
         ports:
