@@ -3,7 +3,8 @@ function (
   port=8080,
   portName="http-service",
   image="jwenz723/gocolor:sha-cac4dd6",
-  name="gocolor"
+  name="gocolor",
+  envMap={},
 )
 [
   k.apps.v1.deployment.new(
@@ -11,6 +12,7 @@ function (
     containers=[
       k.core.v1.container.new(name=name, image=image) +
       k.core.v1.container.withArgs(["-addr=:" + port]) +
+      k.core.v1.container.withEnvMap(envMap) +
       k.core.v1.container.withPorts([k.core.v1.containerPort.newNamed(port, portName)])
     ],
     replicas=1,

@@ -19,6 +19,21 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           args:
           - "-addr=:8080"
+          {{- if or (.Values.gocolor.account) (.Values.gocolor.color) (.Values.gocolor.region) }}
+          env:
+          {{- if .Values.gocolor.account }}
+          - name: GOCOLOR_ACCOUNT
+            value: {{ .Values.gocolor.account }}
+          {{- end }}
+          {{- if .Values.gocolor.color }}
+          - name: GOCOLOR_COLOR
+            value: {{ .Values.gocolor.color }}
+          {{- end }}
+          {{- if .Values.gocolor.region }}
+          - name: GOCOLOR_REGION
+            value: {{ .Values.gocolor.region }}
+          {{- end }}
+          {{- end }}
           ports:
             - name: http-service
               containerPort: {{ .Values.service.port }}

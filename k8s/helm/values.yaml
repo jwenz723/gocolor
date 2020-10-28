@@ -15,3 +15,8 @@ fullnameOverride: ""
 
 service:
   port: 8080
+
+gocolor:
+  account: ""
+  color: ""
+  region: ""

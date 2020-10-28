@@ -18,8 +18,14 @@ To compile the jsonnet source locally execute the following from the [k8s/jsonne
 jsonnet -J vendor ./main/main.jsonnet
 ```
 
-To specify top level arguments:
+To specify top level arguments basic arguments use `tla-str`:
 
 ```bash
 jsonnet -J vendor ./main/main.jsonnet --tla-str port=80
+```
+
+To specify top level object arguments use `tla-code`:
+
+```bash
+jsonnet -J vendor ./main/main.jsonnet --tla-code 'envMap={"one":"two"}'
 ```
