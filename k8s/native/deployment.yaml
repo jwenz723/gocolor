@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    name: gocolor
-  name: gocolor
+    name: gocolor-native
+  name: gocolor-native
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: gocolor
+      name: gocolor-native
   template:
     metadata:
       labels:
-        name: gocolor
+        name: gocolor-native
     spec:
       containers:
-      - name: gocolor
+      - name: gocolor-native
         image: jwenz723/gocolor:sha-cac4dd6
         args:
         - "-addr=:8080"
