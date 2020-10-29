@@ -4,7 +4,9 @@ function (
   portName="http-service",
   image="jwenz723/gocolor:sha-cac4dd6",
   name="gocolor",
-  envMap={},
+  account="unknown",
+  color="yello",
+  region="unknown",
 )
 [
   k.apps.v1.deployment.new(
@@ -12,7 +14,11 @@ function (
     containers=[
       k.core.v1.container.new(name=name, image=image) +
       k.core.v1.container.withArgs(["-addr=:" + port]) +
-      k.core.v1.container.withEnvMap(envMap) +
+      k.core.v1.container.withEnvMap({
+        "GOCOLOR_ACCOUNT": account,
+        "GOCOLOR_COLOR": color,
+        "GOCOLOR_REGION": region,
+      }) +
       k.core.v1.container.withPorts([k.core.v1.containerPort.newNamed(port, portName)])
     ],
     replicas=1,
