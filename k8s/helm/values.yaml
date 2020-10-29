@@ -16,7 +16,9 @@ fullnameOverride: ""
 service:
   port: 8080
 
-gocolor:
-  account: ""
-  color: ""
-  region: ""
+# gocolorEnv contains a map of variables to be applied to the gocolor deployment as env variables. Note that the map
+# keys are not dynamic, you must use the predefined keys.
+gocolorEnv:
+  account: null
+  color: null
+  region: null

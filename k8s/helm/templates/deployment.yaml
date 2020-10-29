@@ -19,17 +19,17 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           args:
           - "-addr=:8080"
-          {{- if or (.Values.gocolor.account) (.Values.gocolor.color) (.Values.gocolor.region) }}
+          {{- if .Values.gocolorEnv }}
           env:
-          {{- if .Values.gocolor.account }}
+          {{- if .Values.gocolorEnv.account }}
           - name: GOCOLOR_ACCOUNT
-            value: {{ .Values.gocolor.account }}
+            value: {{ .Values.gocolorEnv.account }}
           {{- end }}
-          {{- if .Values.gocolor.color }}
+          {{- if .Values.gocolorEnv.color }}
           - name: GOCOLOR_COLOR
-            value: {{ .Values.gocolor.color }}
+            value: {{ .Values.gocolorEnv.color }}
           {{- end }}
-          {{- if .Values.gocolor.region }}
+          {{- if .Values.gocolorEnv.region }}
           - name: GOCOLOR_REGION
             value: {{ .Values.gocolor.region }}
           {{- end }}
