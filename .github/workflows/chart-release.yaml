@@ -13,3 +13,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           charts_dir: k8s/helm
+          linting: off
