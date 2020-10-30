@@ -3,12 +3,12 @@ entries:
   gocolor:
   - apiVersion: v2
     appVersion: main
-    created: "2020-10-30T13:11:47.583675929Z"
+    created: "2020-10-30T13:24:54.086007824Z"
     description: A Helm chart for Kubernetes
-    digest: 66ca97bb3c493193702458d164638c276e6358473e8c5cc7c4f6f98521c26d97
+    digest: 6064d6daa495467e4c6a6750bac20c6f343537b7c490292360d161496e21cb7f
     name: gocolor
     type: application
     urls:
     - https://jwenz723.github.io/gocolor/gocolor-0.1.0.tgz
     version: 0.1.0
-generated: "2020-10-30T13:11:47.583321328Z"
+generated: "2020-10-30T13:24:54.085293621Z"
