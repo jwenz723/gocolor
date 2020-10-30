@@ -8,6 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Calculate Git Hash
+        run: echo 'GIT_HASH=$(git rev-parse --short "$GITHUB_SHA")' >> $GITHUB_ENV
+      - name: Update appVersion
+        uses: shitiomatic/str-replace@master
+        with:
+          include: k8s/helm/Chart.yaml
+          find: "appVersion: main"
+          replace: "appVersion: ${{ env.GIT_HASH }}"
       - name: Publish Helm chart
         uses: stefanprodan/helm-gh-pages@6018219
         with:
