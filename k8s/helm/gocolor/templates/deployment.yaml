@@ -37,3 +37,21 @@ spec:
           ports:
             - name: http-service
               containerPort: {{ .Values.service.port }}
+          livenessProbe:
+            httpGet:
+              path: /info
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: 30
+            failureThreshold: 2
+            successThreshold: 1
+            periodSeconds: 15 # this is at least as long as failureThreshold * periodSeconds on readinessProbe
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /info
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            periodSeconds: 4
+            timeoutSeconds: 3
