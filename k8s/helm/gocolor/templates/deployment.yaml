@@ -3,15 +3,18 @@ kind: Deployment
 metadata:
   name: {{ include "gocolor.fullname" . }}
   labels:
+    app: gocolor
     {{- include "gocolor.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
+      app: gocolor
       {{- include "gocolor.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
+        app: gocolor
         {{- include "gocolor.selectorLabels" . | nindent 8 }}
     spec:
       containers:
