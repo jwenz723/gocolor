@@ -9,16 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: calculate git hash
-        run: |
-          echo "original $GITHUB_SHA"
-          echo "short $(echo ${GITHUB_SHA} | cut -c1-7)"
-          echo "::set-output name=GITHASH::$(echo ${GITHUB_SHA} | cut -c1-7)"
       - name: Update Chart.yaml
         run: |
           ls
-          echo "hash: $GITHASH"
-          sed -i 's/appVersion: latest/appVersion: $GITHASH' ./k8s/helm/gocolor/Chart.yaml
+          echo "hash: $(echo ${GITHUB_SHA} | cut -c1-7)"
+          sed -i "s/appVersion: latest/appVersion: $(echo ${GITHUB_SHA} | cut -c1-7)" ./k8s/helm/gocolor/Chart.yaml
           # TODO: figure out how to auto version the chart using semver (probably using conventional commits)
           #"sed -i 's/version: 0.0.0/version: ${ GITHUB_SHA::8 }' k8s/helm/gocolor/Chart.yaml"
       - name: Publish Helm chart
