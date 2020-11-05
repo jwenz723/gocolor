@@ -9,7 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: print sha
-        run: "echo sha: ${ GITHUB_SHA::8 }"
+        env:
+          SHA8: ${GITHUB_SHA::8}
+        run: "echo sha: $SHA8"
       - name: Update Chart.yaml
         run: |
           "sed -i 's/appVersion: latest/appVersion: ${ GITHUB_SHA::8 }' k8s/helm/gocolor/Chart.yaml"
