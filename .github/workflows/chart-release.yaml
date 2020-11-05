@@ -12,7 +12,9 @@ jobs:
         run: echo "::set-output name=GITHASH::$(echo ${GITHUB_SHA} | cut -c1-7)"
       - name: Update Chart.yaml
         run: |
-          "sed -i 's/appVersion: latest/appVersion: $GITHASH' k8s/helm/gocolor/Chart.yaml"
+          ls
+          echo "hash: $GITHASH"
+          sed -i 's/appVersion: latest/appVersion: $GITHASH' ./k8s/helm/gocolor/Chart.yaml
           # TODO: figure out how to auto version the chart using semver (probably using conventional commits)
           #"sed -i 's/version: 0.0.0/version: ${ GITHUB_SHA::8 }' k8s/helm/gocolor/Chart.yaml"
       - name: Publish Helm chart
