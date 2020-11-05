@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "gocolor.fullname" . }}
+  name: test-harness-{{ include "gocolor.fullname" . }}
   labels:
     app: gocolor
     {{- include "gocolor.labels" . | nindent 4 }}
