@@ -1,6 +1,7 @@
 name: release-chart
 on:
   push:
+    branches: [ main ]
     tags: 'chart-*'
 
 jobs:
@@ -9,7 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: calculate git hash
-        run: echo "::set-output name=GITHASH::$(echo ${GITHUB_SHA} | cut -c1-7)"
+        run: |
+          echo "original $GITHUB_SHA"
+          echo "short $(echo ${GITHUB_SHA} | cut -c1-7)"
+          echo "::set-output name=GITHASH::$(echo ${GITHUB_SHA} | cut -c1-7)"
       - name: Update Chart.yaml
         run: |
           ls
