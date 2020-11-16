@@ -60,7 +60,7 @@ jobs:
     name: Docker Build and Push
     runs-on: ubuntu-latest
     needs: release
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == "true"
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == 'true'
     steps:
       - name: Docker Build and Push to Github Packages
         uses: docker/build-push-action@v1.1.1
