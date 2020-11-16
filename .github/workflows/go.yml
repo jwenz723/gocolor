@@ -94,7 +94,6 @@ jobs:
           # TODO: figure out how to auto version the chart using semver (probably using conventional commits)
           sed -i "s/version: 0.0.0/version: ${{ needs.release.outputs.tag_name }}/" ./k8s/helm/gocolor/Chart.yaml
       - name: Publish Helm chart
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.release-please-action.outputs.release_created == "true"
         uses: stefanprodan/helm-gh-pages@6018219
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
