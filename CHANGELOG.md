@@ -1,3 +1,13 @@
+## [1.1.1](https://github.com/jwenz723/gocolor/compare/v1.1.0...v1.1.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* require conventional title ([b3a8a8d](https://github.com/jwenz723/gocolor/commit/b3a8a8d201c020e1b42434edc2613f9da764cac0))
+* testing conventional commits configuration ([3074b6c](https://github.com/jwenz723/gocolor/commit/3074b6cbe2b52134f9ef5fd004e5fec11d87f8ca))
+
+
+
 # [1.1.0](https://github.com/jwenz723/gocolor/compare/v1.0.0...v1.1.0) (2020-11-16)
 
 
