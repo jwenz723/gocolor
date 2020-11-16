@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/jwenz723/gocolor/compare/v2.0.1...v2.1.0) (2020-11-16)
+
+
+### Features
+
+* updating docker tagging to use semver ([2d86140](https://www.github.com/jwenz723/gocolor/commit/2d86140bee1b2105c692e7eedaf2b81fb885f966))
+
 ### [2.0.1](https://www.github.com/jwenz723/gocolor/compare/v2.0.0...v2.0.1) (2020-11-16)
 
 
