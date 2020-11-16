@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/jwenz723/gocolor/compare/v2.0.0...v2.0.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* removed 'v' from helm chart version ([7c1395d](https://www.github.com/jwenz723/gocolor/commit/7c1395d26ed7b58bd46553809b8d8c5f3ca43d32))
+
 ## [2.0.0](https://www.github.com/jwenz723/gocolor/compare/v1.0.0...v2.0.0) (2020-11-16)
 
 
