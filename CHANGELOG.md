@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/jwenz723/gocolor/compare/v1.0.0...v1.1.0) (2020-11-16)
+
+
+### Features
+
+* added go module caching in workflow ([9b79dd6](https://github.com/jwenz723/gocolor/commit/9b79dd69b075516464ccedcd3bdbaf06e2fb8a91))
+
+
+
 # [1.0.0](https://github.com/jwenz723/gocolor/compare/v0.2.0...v1.0.0) (2020-11-16)
 
 
