@@ -24,8 +24,6 @@ spec:
           - "-addr=:8080"
           {{- if .Values.gocolorEnv }}
           env:
-          - name: TEST
-            value: something
           {{- if .Values.gocolorEnv.account }}
           - name: GOCOLOR_ACCOUNT
             value: {{ .Values.gocolorEnv.account }}
