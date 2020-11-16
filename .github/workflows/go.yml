@@ -60,19 +60,26 @@ jobs:
           tag_with_ref: true
           tag_with_sha: true
 
-      - name: Conventional Changelog Action
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      - uses: GoogleCloudPlatform/release-please-action@v2.6.0
         with:
-          github-token: ${{ secrets.github_token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: simple
+          package-name: gocolor
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.changelog.outputs.skipped == 'false'
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+# The following works, but does not support breaking changes in the commit message indicated by `!` like `fix!: did something`
+#      - name: Conventional Changelog Action
+#        id: changelog
+#        uses: TriPSs/conventional-changelog-action@v3
+#        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#        with:
+#          github-token: ${{ secrets.github_token }}
+#
+#      - name: Create Release
+#        uses: actions/create-release@v1
+#        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.changelog.outputs.skipped == 'false'
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.github_token }}
+#        with:
+#          tag_name: ${{ steps.changelog.outputs.tag }}
+#          release_name: ${{ steps.changelog.outputs.tag }}
+#          body: ${{ steps.changelog.outputs.clean_changelog }}
