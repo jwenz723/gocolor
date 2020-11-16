@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/jwenz723/gocolor/compare/v2.3.0...v2.4.0) (2020-11-16)
+
+
+### Features
+
+* added some feature ([#21](https://www.github.com/jwenz723/gocolor/issues/21)) ([83526fe](https://www.github.com/jwenz723/gocolor/commit/83526fe8d0ed397b12a4d46aceff9104b3f6119a))
+* updated deployment env vars ([15ec9e4](https://www.github.com/jwenz723/gocolor/commit/15ec9e4ed133f103989070edee15f8291e5c48c5))
+
+
+### Bug Fixes
+
+* removed bad deployment name ([a3dba0d](https://www.github.com/jwenz723/gocolor/commit/a3dba0dfceb8fc8867e0ad9d8fc1199e129ede95))
+
 ## [2.3.0](https://www.github.com/jwenz723/gocolor/compare/v2.2.0...v2.3.0) (2020-11-16)
 
 
