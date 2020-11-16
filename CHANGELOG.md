@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/jwenz723/gocolor/compare/v1.0.0...v2.0.0) (2020-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* removed chart-release.yaml
+
+### Features
+
+* removed chart-release.yaml ([3bb6ef4](https://www.github.com/jwenz723/gocolor/commit/3bb6ef469f4bee8a17c79d0cf2ee51899269bed6))
+
+
+### Bug Fixes
+
+* added checkout action ([a057d4e](https://www.github.com/jwenz723/gocolor/commit/a057d4ebf711e63060ceb682514e69f53fcddb1b))
+
 ## 1.0.0 (2020-11-16)
 
 
