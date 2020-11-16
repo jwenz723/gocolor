@@ -40,6 +40,28 @@ jobs:
       - name: Test
         run: go test -v .
 
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    outputs:
+      release_created: ${{ steps.release-please-action.outputs.release_created }}
+      tag_name: ${{ steps.release-please-action.outputs.tag_name }}
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2.6.0
+        id: release-please-action
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: simple
+          package-name: gocolor
+
+  docker:
+    name: Docker Build and Push
+    runs-on: ubuntu-latest
+    needs: release
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == "true"
+    steps:
       - name: Docker Build and Push to Github Packages
         uses: docker/build-push-action@v1.1.1
         with:
@@ -50,7 +72,6 @@ jobs:
           tag_with_ref: true
           tag_with_sha: true
 
-
       - name: Docker Build and Push to Docker Hub
         uses: docker/build-push-action@v1.1.1
         with:
@@ -60,8 +81,22 @@ jobs:
           tag_with_ref: true
           tag_with_sha: true
 
-      - uses: GoogleCloudPlatform/release-please-action@v2.6.0
+  helm:
+    name: Helm Package and Publish
+    runs-on: ubuntu-latest
+    needs: release
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == "true"
+    steps:
+      - run: "echo tag_name: ${{ needs.release.outputs.tag_name }}"
+      - name: Update Chart.yaml
+        run: |
+          sed -i "s/appVersion: latest/appVersion: sha-$(echo ${GITHUB_SHA} | cut -c1-7)/" ./k8s/helm/gocolor/Chart.yaml
+          # TODO: figure out how to auto version the chart using semver (probably using conventional commits)
+          sed -i "s/version: 0.0.0/version: ${{ needs.release.outputs.tag_name }}/" ./k8s/helm/gocolor/Chart.yaml
+      - name: Publish Helm chart
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.release-please-action.outputs.release_created == "true"
+        uses: stefanprodan/helm-gh-pages@6018219
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: simple
-          package-name: gocolor
+          charts_dir: k8s/helm
+          linting: off
