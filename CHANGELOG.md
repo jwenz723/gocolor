@@ -1,3 +1,12 @@
+## [1.1.3](https://github.com/jwenz723/gocolor/compare/v1.1.2...v1.1.3) (2020-11-16)
+
+
+### Bug Fixes
+
+* reducing empty lines ([#6](https://github.com/jwenz723/gocolor/issues/6)) ([7c2e274](https://github.com/jwenz723/gocolor/commit/7c2e274b44fcb7d7ff159344a6a49a27a15e22b0))
+
+
+
 ## [1.1.2](https://github.com/jwenz723/gocolor/compare/v1.1.1...v1.1.2) (2020-11-16)
 
 
@@ -36,15 +45,6 @@
 ### BREAKING CHANGES
 
 * Testing that this change will bump the `major` version
-
-
-
-# [0.2.0](https://github.com/jwenz723/gocolor/compare/v0.1.0...v0.2.0) (2020-11-16)
-
-
-### Features
-
-* add github release generation ([196384c](https://github.com/jwenz723/gocolor/commit/196384c20a9d8d8fdaac1da633e7ccf80c3b5534))
 
 
 
