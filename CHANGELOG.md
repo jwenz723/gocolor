@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/jwenz723/gocolor/compare/v0.2.0...v1.0.0) (2020-11-16)
+
+
+* docs!: testing semver ([0324374](https://github.com/jwenz723/gocolor/commit/03243746f0e7526a37addda76dd44befebd4b383))
+
+
+### BREAKING CHANGES
+
+* Testing that this change will bump the `major` version
+
+
+
 # [0.2.0](https://github.com/jwenz723/gocolor/compare/v0.1.0...v0.2.0) (2020-11-16)
 
 
