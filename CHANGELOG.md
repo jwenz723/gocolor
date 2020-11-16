@@ -1,3 +1,12 @@
+## [1.1.4](https://github.com/jwenz723/gocolor/compare/v1.1.3...v1.1.4) (2020-11-16)
+
+
+### Bug Fixes
+
+* BREAKING CHANGE removed semantic.yml ([281f418](https://github.com/jwenz723/gocolor/commit/281f418d834fd75458aae64aa1ca141b1e7e8b86))
+
+
+
 ## [1.1.3](https://github.com/jwenz723/gocolor/compare/v1.1.2...v1.1.3) (2020-11-16)
 
 
@@ -33,18 +42,6 @@
 ### Features
 
 * added go module caching in workflow ([9b79dd6](https://github.com/jwenz723/gocolor/commit/9b79dd69b075516464ccedcd3bdbaf06e2fb8a91))
-
-
-
-# [1.0.0](https://github.com/jwenz723/gocolor/compare/v0.2.0...v1.0.0) (2020-11-16)
-
-
-* docs!: testing semver ([0324374](https://github.com/jwenz723/gocolor/commit/03243746f0e7526a37addda76dd44befebd4b383))
-
-
-### BREAKING CHANGES
-
-* Testing that this change will bump the `major` version
 
 
 
