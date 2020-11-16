@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/jwenz723/gocolor/compare/v1.0.0...v1.0.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* added checkout action ([a057d4e](https://www.github.com/jwenz723/gocolor/commit/a057d4ebf711e63060ceb682514e69f53fcddb1b))
+
 ## 1.0.0 (2020-11-16)
 
 
