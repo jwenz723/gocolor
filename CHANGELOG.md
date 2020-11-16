@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/jwenz723/gocolor/compare/v2.1.0...v2.2.0) (2020-11-16)
+
+
+### Features
+
+* updating helm appVersion ([dbb3b4d](https://www.github.com/jwenz723/gocolor/commit/dbb3b4d182188a9a3ee8a83e2d230d6a857b3fcc))
+
 ## [2.1.0](https://www.github.com/jwenz723/gocolor/compare/v2.0.1...v2.1.0) (2020-11-16)
 
 
