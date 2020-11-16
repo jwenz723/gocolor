@@ -8,6 +8,3 @@
 
 # Always validate the PR title AND all the commits
 titleAndCommits: true
-
-
-
