@@ -49,6 +49,7 @@ jobs:
       release_created: ${{ steps.release-please-action.outputs.release_created }}
       tag_name: ${{ steps.release-please-action.outputs.tag_name }}
     steps:
+      - uses: actions/checkout@v2
       - uses: GoogleCloudPlatform/release-please-action@v2.6.0
         id: release-please-action
         with:
@@ -62,6 +63,7 @@ jobs:
     needs: release
     if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == 'true'
     steps:
+      - uses: actions/checkout@v2
       - name: Docker Build and Push to Github Packages
         uses: docker/build-push-action@v1.1.1
         with:
@@ -87,6 +89,7 @@ jobs:
     needs: release
     if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == 'true'
     steps:
+      - uses: actions/checkout@v2
       - run: "echo tag_name: ${{ needs.release.outputs.tag_name }}"
       - name: Update Chart.yaml
         run: |
