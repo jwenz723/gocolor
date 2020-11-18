@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.7.1](https://www.github.com/jwenz723/gocolor/compare/v2.7.0...v2.7.1) (2020-11-18)
+
+
+### Bug Fixes
+
+* added some stuff ([#26](https://www.github.com/jwenz723/gocolor/issues/26)) ([c671f4c](https://www.github.com/jwenz723/gocolor/commit/c671f4cf6b8b7b7c2e436d28c0577b54d25d7486))
+
 ## [2.7.0](https://www.github.com/jwenz723/gocolor/compare/v2.6.0...v2.7.0) (2020-11-18)
 
 
