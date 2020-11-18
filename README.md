@@ -13,3 +13,10 @@ View the contents of `func getConfig()` within [main.go](main.go) to get a list 
 Clone the repo then run:
 
 `go run main.go`
+
+
+## Conventional Commits
+
+This repository enforces that commits be made following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+styling. You can find a short list of the commit message `type` values that are available
+[here](https://github.com/commitizen/conventional-commit-types/blob/master/index.json).
