@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/jwenz723/gocolor/compare/v2.4.0...v2.5.0) (2020-11-18)
+
+
+### Features
+
+* testing repository dispatch, added conventional commits docs. ([f1a86df](https://www.github.com/jwenz723/gocolor/commit/f1a86df2d0f0059906977183af3804bde92ad876))
+
 ## [2.4.0](https://www.github.com/jwenz723/gocolor/compare/v2.3.0...v2.4.0) (2020-11-16)
 
 
