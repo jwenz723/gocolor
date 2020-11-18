@@ -68,7 +68,7 @@ jobs:
         uses: docker/build-push-action@v1.1.1
         with:
           username: ${{ github.repository_owner }}
-          password: ${{secrets.GITHUB_TOKEN}}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/gocolor
           tags: ${{ needs.release.outputs.tag_name }}
@@ -76,8 +76,8 @@ jobs:
       - name: Docker Build and Push to Docker Hub
         uses: docker/build-push-action@v1.1.1
         with:
-          username: ${{secrets.DOCKER_USERNAME}}
-          password: ${{secrets.DOCKER_PASSWORD}}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
           tags: ${{ needs.release.outputs.tag_name }}
 
@@ -88,14 +88,30 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push' && needs.release.outputs.release_created == 'true'
     steps:
       - uses: actions/checkout@v2
-      - run: "echo tag_name: ${{ needs.release.outputs.tag_name }}"
+
+      - id: sanitize
+        run: echo "::set-output name=helm_chart_version::$(echo ${{ needs.release.outputs.tag_name }} | sed 's/v//g')"
+
+      - run: |
+          echo "tag_name: ${{ needs.release.outputs.tag_name }}"
+          echo "helm_chart_version: ${{ steps.sanitize.outputs.helm_chart_version }}"
+
       - name: Update Chart.yaml
         run: |
           sed -i "s/appVersion: latest/appVersion: ${{ needs.release.outputs.tag_name }}/" ./k8s/helm/gocolor/Chart.yaml
-          sed -i "s/version: 0.0.0/version: $(echo ${{ needs.release.outputs.tag_name }} | sed 's/v//g')/" ./k8s/helm/gocolor/Chart.yaml
+          sed -i "s/version: 0.0.0/version: ${{ steps.sanitize.outputs.helm_chart_version }}/" ./k8s/helm/gocolor/Chart.yaml
+
       - name: Publish Helm chart
         uses: stefanprodan/helm-gh-pages@6018219
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           charts_dir: k8s/helm
           linting: off
+
+      - name: Dispatcher
+        uses: peter-evans/repository-dispatch@v1.1.3
+        with:
+          client-payload: '{"helm_chart_version":"${{ steps.sanitize.outputs.helm_chart_version }}"}'
+          event-type: ${{ github.repository }}
+          repository: inContact/acddevops-kubernetes
+          token: ${{ secrets.DISPATCHER_PAT }}
