@@ -113,5 +113,5 @@ jobs:
         with:
           client-payload: '{"helm_chart_version":"${{ steps.sanitize.outputs.helm_chart_version }}"}'
           event-type: ${{ github.repository }}
-          repository: inContact/acddevops-kubernetes
+          repository: inContact/acddevops-kubernetes-workloads
           token: ${{ secrets.DISPATCHER_PAT }}
