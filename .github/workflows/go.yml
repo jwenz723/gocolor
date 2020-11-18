@@ -115,4 +115,3 @@ jobs:
           event-type: ${{ github.repository }}-${{ steps.sanitize.outputs.helm_chart_version }}
           repository: inContact/acddevops-kubernetes-workloads
           token: ${{ secrets.DISPATCHER_PAT }}
-
