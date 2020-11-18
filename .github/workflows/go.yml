@@ -112,7 +112,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v1.1.3
         with:
           client-payload: '{"helm_chart_version":"${{ steps.sanitize.outputs.helm_chart_version }}"}'
-          event-type: ${{ github.repository }}
+          event-type: ${{ github.repository }}-${{ steps.sanitize.outputs.helm_chart_version }}
           repository: inContact/acddevops-kubernetes-workloads
           token: ${{ secrets.DISPATCHER_PAT }}
 
