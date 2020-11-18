@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.0](https://www.github.com/jwenz723/gocolor/compare/v2.7.1...v2.8.0) (2020-11-18)
+
+
+### Features
+
+* placing helm_chart_version into repository dispatch event-type ([2fd9ddb](https://www.github.com/jwenz723/gocolor/commit/2fd9ddb1a566ba3fe2be6832964e6a645e2b23a6))
+
 ### [2.7.1](https://www.github.com/jwenz723/gocolor/compare/v2.7.0...v2.7.1) (2020-11-18)
 
 
