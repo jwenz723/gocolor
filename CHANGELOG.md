@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://www.github.com/jwenz723/gocolor/compare/v2.8.0...v2.9.0) (2020-11-19)
+
+
+### Features
+
+* testing repository dispatch ([613fd65](https://www.github.com/jwenz723/gocolor/commit/613fd6580ec175b2902a61b078f530fa785049f4))
+
 ## [2.8.0](https://www.github.com/jwenz723/gocolor/compare/v2.7.1...v2.8.0) (2020-11-18)
 
 
