@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.0](https://www.github.com/jwenz723/gocolor/compare/v2.9.0...v2.10.0) (2020-11-20)
+
+
+### Features
+
+* added helm test ([#30](https://www.github.com/jwenz723/gocolor/issues/30)) ([1ef8940](https://www.github.com/jwenz723/gocolor/commit/1ef8940d9d87bb40ade15bea4592ec7b71b5648f))
+
 ## [2.9.0](https://www.github.com/jwenz723/gocolor/compare/v2.8.0...v2.9.0) (2020-11-19)
 
 
