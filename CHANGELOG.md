@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.0](https://www.github.com/jwenz723/gocolor/compare/v2.11.0...v2.12.0) (2020-11-20)
+
+
+### Features
+
+* testing deploy ([2574132](https://www.github.com/jwenz723/gocolor/commit/257413263af3a831f0a815d29ecf812bdb38edc9))
+
 ## [2.11.0](https://www.github.com/jwenz723/gocolor/compare/v2.10.0...v2.11.0) (2020-11-20)
 
 
