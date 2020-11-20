@@ -23,8 +23,8 @@ spec:
           apk add curl
           resp=$(curl -s $SERVICE_ADDR:$SERVICE_PORT/info)
           echo "resp: $resp"
-          echo $resp | grep -q -e "Account: unknown"
-          echo $resp | grep -q -e "Region: unknown"
-          echo $resp | grep -q -e "background-color: aquamarine;"
+          echo $resp | grep -q -e "Account: {{ .Values.gocolorEnv.account | default "unknown" }}"
+          echo $resp | grep -q -e "Region: {{ .Values.gocolorEnv.region | default "unknown" }}"
+          echo $resp | grep -q -e "background-color: {{ .Values.gocolorEnv.color | default "aquamarine" }};"
       name: {{ .Release.Name }}-simple-test
   restartPolicy: Never
