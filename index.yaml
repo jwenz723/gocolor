@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   gocolor:
   - apiVersion: v2
+    appVersion: v2.12.0
+    created: "2020-11-20T21:18:27.117747053Z"
+    description: A Helm chart for Kubernetes
+    digest: 7ca2dd7ea044a80896334c7f5c962d68fe0ab49343b49bc1b96bb0288e27b42f
+    name: gocolor
+    type: application
+    urls:
+    - https://jwenz723.github.io/gocolor/gocolor-2.12.0.tgz
+    version: 2.12.0
+  - apiVersion: v2
     appVersion: v2.11.0
-    created: "2020-11-20T15:11:41.430234694Z"
+    created: "2020-11-20T21:18:27.117454449Z"
     description: A Helm chart for Kubernetes
     digest: 59834b0a06e03fb711519e45205421e89b4cf0361ea806dbc0c2e3001c72aa2a
     name: gocolor
@@ -13,7 +23,7 @@ entries:
     version: 2.11.0
   - apiVersion: v2
     appVersion: v2.10.0
-    created: "2020-11-20T15:11:41.429841791Z"
+    created: "2020-11-20T21:18:27.117167946Z"
     description: A Helm chart for Kubernetes
     digest: 47b08e19231b3e46a61f86bea7500f59ca247f10fc0834e52bd89fe54a4ceee9
     name: gocolor
@@ -23,7 +33,7 @@ entries:
     version: 2.10.0
   - apiVersion: v2
     appVersion: v2.9.0
-    created: "2020-11-20T15:11:41.433170116Z"
+    created: "2020-11-20T21:18:27.120050882Z"
     description: A Helm chart for Kubernetes
     digest: 5c79003cd7bf6c297163f896f45995085449e7958088a41fea730fe0e225de8d
     name: gocolor
@@ -33,7 +43,7 @@ entries:
     version: 2.9.0
   - apiVersion: v2
     appVersion: v2.8.0
-    created: "2020-11-20T15:11:41.432910414Z"
+    created: "2020-11-20T21:18:27.119790979Z"
     description: A Helm chart for Kubernetes
     digest: c9a5b56202592db06b5303ddb0acbd898b4c4069c50d5a14fd455152655d0f13
     name: gocolor
@@ -43,7 +53,7 @@ entries:
     version: 2.8.0
   - apiVersion: v2
     appVersion: v2.7.1
-    created: "2020-11-20T15:11:41.432649912Z"
+    created: "2020-11-20T21:18:27.119520775Z"
     description: A Helm chart for Kubernetes
     digest: eab1b4586cdf31a39a8ea2fcfed122d3a46dcd029a97eb0dec25b583e4107ab7
     name: gocolor
@@ -53,7 +63,7 @@ entries:
     version: 2.7.1
   - apiVersion: v2
     appVersion: v2.7.0
-    created: "2020-11-20T15:11:41.43238461Z"
+    created: "2020-11-20T21:18:27.119262272Z"
     description: A Helm chart for Kubernetes
     digest: 4189a6d51cd5289442e5cca23895722363b8ea8cf7f684de62d289aa08535b31
     name: gocolor
@@ -63,7 +73,7 @@ entries:
     version: 2.7.0
   - apiVersion: v2
     appVersion: v2.6.0
-    created: "2020-11-20T15:11:41.432122908Z"
+    created: "2020-11-20T21:18:27.118995169Z"
     description: A Helm chart for Kubernetes
     digest: 93396c03ea3b820b8a0bfc41b7ecced662adaeafa34d39d831499279c4047a3e
     name: gocolor
@@ -73,7 +83,7 @@ entries:
     version: 2.6.0
   - apiVersion: v2
     appVersion: v2.5.0
-    created: "2020-11-20T15:11:41.431853806Z"
+    created: "2020-11-20T21:18:27.118691165Z"
     description: A Helm chart for Kubernetes
     digest: e126817473cf84ef39e856cb30b4628921e3b3a7108e625285292525ced0165c
     name: gocolor
@@ -83,7 +93,7 @@ entries:
     version: 2.5.0
   - apiVersion: v2
     appVersion: v2.4.0
-    created: "2020-11-20T15:11:41.431587004Z"
+    created: "2020-11-20T21:18:27.118443862Z"
     description: A Helm chart for Kubernetes
     digest: 228d2ef9fc432d8d43a421e328a3cc1bcfce6859c4ee0d76bdf392df9566a244
     name: gocolor
@@ -93,7 +103,7 @@ entries:
     version: 2.4.0
   - apiVersion: v2
     appVersion: v2.3.0
-    created: "2020-11-20T15:11:41.431305802Z"
+    created: "2020-11-20T21:18:27.118212559Z"
     description: A Helm chart for Kubernetes
     digest: 219def405d8e34bac5f763cecd83c36d21ff0cd573b95b6d93a9c7d17b4f7225
     name: gocolor
@@ -103,7 +113,7 @@ entries:
     version: 2.3.0
   - apiVersion: v2
     appVersion: v2.2.0
-    created: "2020-11-20T15:11:41.430640297Z"
+    created: "2020-11-20T21:18:27.117976256Z"
     description: A Helm chart for Kubernetes
     digest: 0dc5bde04887a3abfa608b54de37cbb6e6187b443e69140728b46012be395b02
     name: gocolor
@@ -113,7 +123,7 @@ entries:
     version: 2.2.0
   - apiVersion: v2
     appVersion: sha-8180cbf
-    created: "2020-11-20T15:11:41.429488788Z"
+    created: "2020-11-20T21:18:27.116864342Z"
     description: A Helm chart for Kubernetes
     digest: a6f812f8af678eca0cea4422dd90ef8a3d0aecfeca2e3bb4e5282ab15284b926
     name: gocolor
@@ -123,7 +133,7 @@ entries:
     version: 2.1.0
   - apiVersion: v2
     appVersion: sha-bf84f75
-    created: "2020-11-20T15:11:41.429142086Z"
+    created: "2020-11-20T21:18:27.116576438Z"
     description: A Helm chart for Kubernetes
     digest: 4be25430c1d8e1c535e3123eb8f0181728fbf6c097c06541b050abdd5fd3a25f
     name: gocolor
@@ -133,7 +143,7 @@ entries:
     version: 2.0.1
   - apiVersion: v2
     appVersion: sha-870ce14
-    created: "2020-11-20T15:11:41.428693383Z"
+    created: "2020-11-20T21:18:27.116259034Z"
     description: A Helm chart for Kubernetes
     digest: acc4da8a8a0dfbd9355de94d05eac26b3cdd86cc6bbfcdd253b9582eb4380abe
     name: gocolor
@@ -141,4 +151,4 @@ entries:
     urls:
     - https://jwenz723.github.io/gocolor/gocolor-0.4.0.tgz
     version: 0.4.0
-generated: "2020-11-20T15:11:41.428073078Z"
+generated: "2020-11-20T21:18:27.115750128Z"
