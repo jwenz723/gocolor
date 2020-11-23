@@ -66,6 +66,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
 
+// handleInfo handles /info requests
 func handleInfo(c Config) http.HandlerFunc {
 	t, err := template.New("t").Parse(`
 <html>
