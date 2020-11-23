@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.0](https://www.github.com/jwenz723/gocolor/compare/v2.12.0...v2.13.0) (2020-11-23)
+
+
+### Features
+
+* added comment ([#34](https://www.github.com/jwenz723/gocolor/issues/34)) ([674315c](https://www.github.com/jwenz723/gocolor/commit/674315ce4b469d508f755c4be410d3c367c275d0))
+
 ## [2.12.0](https://www.github.com/jwenz723/gocolor/compare/v2.11.0...v2.12.0) (2020-11-20)
 
 
